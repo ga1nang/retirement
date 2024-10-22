@@ -13,7 +13,7 @@ col1, col2 = st.columns([3, 8])
 with col1:
     st.header("Input")
     # Main parameters
-    current_spending = st.number_input("Current Annual Spending (USD)", value=20_000_000, step=1_000_000)
+    current_spending = st.number_input("Current Annual Spending (USD)", value=20000, step=1000)
     inflation_rate = st.number_input("Inflation Rate (%)", value=3.0, step=0.1) / 100
     interest_rate = st.number_input("Interest Rate (%)", value=8.0, step=0.1) / 100
     years_to_retirement = st.number_input("Years Until Retirement", value=30, step=1)
@@ -26,7 +26,7 @@ with col1:
     # Adjustment buttons
     if st.button("Up"):
         if parameter == "Annual Spending Requirement":
-            current_spending += 1_000_000  # Increase by 1,000,000 USD
+            current_spending += 1000  # Increase by 1,000,000 USD
         elif parameter == "Inflation Rate":
             inflation_rate += 0.001  # Increase by 0.1%
         elif parameter == "Interest Rate":
@@ -36,7 +36,7 @@ with col1:
 
     if st.button("Down"):
         if parameter == "Annual Spending Requirement" and current_spending > 0:
-            current_spending -= 1_000_000  # Decrease by 1,000,000 USD
+            current_spending -1000  # Decrease by 1,000,000 USD
         elif parameter == "Inflation Rate" and inflation_rate > 0:
             inflation_rate -= 0.001  # Decrease by 0.1%
         elif parameter == "Interest Rate" and interest_rate > 0:
